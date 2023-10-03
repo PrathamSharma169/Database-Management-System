@@ -20,72 +20,72 @@ class node {
             this->dob=d;
             this->gmail=g;
       }
-
-      void add(node*head,node*last){
-            while(head->next!=NULL){
-              head=head->next;
-            }
-            head->next=last->previous;
-            last->next=NULL; 
-            free(last);
-      }
-
-      int count(node*head){
-        int c=1;
-        while(head->next != NULL){
-            head=head->next;
-            c++;
-        }
-        return c;
-      }
-
-      void named(node*head){
-        while(head->next!=NULL){
-            cout<<head->name<<endl;
-            head=head->next;
-        }
-      }
-
-      string roll(string n, node*head){
-        int c=1;
-        int x =count(head);
-        while(c!=x && head->name==n){
-                head=head->next;
-                c++;
-        }
-        return head->rollno;
-
-      }
-
-      string branc(string n, node*head){
-             int c=1;
-        int x =count(head);
-        while(c!=x && head->name==n){
-                head=head->next;
-                c++;
-        }
-        return head->branch;      
-      }
-
-      string dobe(string n, node*head){
-             int c=1;
-        int x =count(head);
-        while(c!=x && head->name==n){
-                head=head->next;
-                c++;
-        }
-        return head->dob;
-      }
-      string gmai(string n, node*head){
-             int c=1;
-        int x =count(head);
-        while(c!=x && head->name==n){
-                head=head->next;
-                c++;
-      }
-      return head->gmail;
-      }
 };
+
+void add(node*head,node*last){
+  while(head->next!=NULL){
+    head=head->next;
+      }
+  head->next=last->previous;
+  last->next=NULL; 
+  free(last);
+    }
+
+int count(node*head){
+  int c=1;
+  while(head->next != NULL){
+    head=head->next;
+    c++;
+    }
+  return c;
+  }
+
+void named(node*head){
+  while(head->next!=NULL){
+    cout<<head->name<<endl;
+    head=head->next;
+    }
+  }
+
+string roll(string n, node*head){
+  int c=1;
+  int x =count(head);
+  while(c!=x && head->name==n){
+    head=head->next;
+    c++;
+    }
+  return head->rollno;
+
+  }
+
+string branc(string n, node*head){
+  int c=1;
+  int x =count(head);
+  while(c!=x && head->name==n){
+    head=head->next;
+    c++;
+    }
+  return head->branch;      
+  }
+
+string dobe(string n, node*head){
+  int c=1;
+  int x =count(head);
+  while(c!=x && head->name==n){
+    head=head->next;
+    c++;
+    }
+  return head->dob;
+  }
+string gmai(string n, node*head){
+  int c=1;
+  int x =count(head);
+  while(c!=x && head->name==n){
+    head=head->next;
+    c++;
+      }
+  return head->gmail;
+}
 
 int main(){
     node*node1=new node("pratham","0901cs221101", "cse","12345678","bubhbkhvh");
@@ -103,25 +103,25 @@ int main(){
             cout<<"what is the name?"<<endl;
             string n;
             cin>>n;
-            cout<<node1->roll(n,node1)<<endl;
+            cout<<roll(n,node1)<<endl;
         }
         if (s==2){
             cout<<"what is the name?"<<endl;
             string n;
             cin>>n;
-            cout<<node1->dobe(n,node1)<<endl;
+            cout<<dobe(n,node1)<<endl;
         }
         if (s==3){
             cout<<"what is the name?"<<endl;
             string n;
             cin>>n;
-            cout<<node1->branc(n,node1)<<endl;
+            cout<<branc(n,node1)<<endl;
         }
         if (s==4){
             cout<<"what is the name?"<<endl;
             string n;
             cin>>n;
-            cout<<node1->gmai(n,node1)<<endl;
+            cout<<gmai(n,node1)<<endl;
         }
         if (s==5){
           cout<<"enter name of student "<<endl;
@@ -140,7 +140,7 @@ int main(){
           string d;
           cin>>d;
           node*temp=new node(na,ro,br,d,gm);
-          node1->add(node1,temp);
+          add(node1,temp);
         }
       cout<<"for continuing enter c else enter s"<<endl;
       cin>>con;
