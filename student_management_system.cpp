@@ -50,7 +50,7 @@ void named(node*head){
 string roll(string n, node*head){
   int c=1;
   int x =count(head);
-  while(c!=x && head->name==n){
+  while(c!=x && head->name!=n){
     head=head->next;
     c++;
     }
@@ -61,7 +61,7 @@ string roll(string n, node*head){
 string branc(string n, node*head){
   int c=1;
   int x =count(head);
-  while(c!=x && head->name==n){
+  while(c!=x && head->name!=n){
     head=head->next;
     c++;
     }
@@ -71,7 +71,7 @@ string branc(string n, node*head){
 string dobe(string n, node*head){
   int c=1;
   int x =count(head);
-  while(c!=x && head->name==n){
+  while(c!=x && head->name!=n){
     head=head->next;
     c++;
     }
@@ -80,7 +80,7 @@ string dobe(string n, node*head){
 string gmai(string n, node*head){
   int c=1;
   int x =count(head);
-  while(c!=x && head->name==n){
+  while(c!=x && head->name!=n){
     head=head->next;
     c++;
       }
