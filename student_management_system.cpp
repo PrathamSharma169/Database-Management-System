@@ -4,7 +4,6 @@ using namespace std;
 class node {
       public:
             node* next;
-            node* previous;
             string name ;
             string rollno;
             string branch;
@@ -12,7 +11,6 @@ class node {
             string gmail;
             
       node ( string n, string roll , string b ,string d , string g){
-            this  -> previous= NULL;
             this -> next = NULL;
             this-> name=n;
             this->  rollno = roll ;
@@ -26,9 +24,8 @@ void add(node*head,node*last){
   while(head->next!=NULL){
     head=head->next;
       }
-  head->next=last->previous;
-  last->next=NULL; 
-  free(last);
+  head->next=last;
+  last->next=NULL;
     }
 
 int count(node*head){
@@ -89,7 +86,7 @@ string gmai(string n, node*head){
 
 int main(){
     node*node1=new node("pratham","0901cs221101", "cse","12345678","bubhbkhvh");
-    cout<<"no. of students present in database------>";
+    //cout<<"no. of students present in database------>";
     //cout<<n1.count(first)<<endl;
     //cout<<"name of the students present in this data base----->"<<endl<<n1.name(first)<<endl;
     int c=0;
@@ -141,6 +138,7 @@ int main(){
           cin>>d;
           node*temp=new node(na,ro,br,d,gm);
           add(node1,temp);
+          free(temp);
         }
       cout<<"for continuing enter c else enter s"<<endl;
       cin>>con;
